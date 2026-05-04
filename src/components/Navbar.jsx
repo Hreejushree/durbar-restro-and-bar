@@ -21,8 +21,11 @@ export default function Navbar() {
     <>
       <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
         <Link to="/" className="nav-logo" onClick={() => setMobileOpen(false)}>
-          <span className="brand">Durbar Restro</span>
-          <span className="tagline">Restaurant &amp; Bar</span>
+          <img src="/src/assets/logo.jpg" alt="Durbar Restro Logo" className="nav-logo-img" />
+          <div className="nav-logo-text">
+            <span className="brand">Durbar Restro</span>
+            <span className="tagline">Restaurant &amp; Bar</span>
+          </div>
         </Link>
 
         <ul className="nav-links">
@@ -30,7 +33,7 @@ export default function Navbar() {
           <li><NavLink to="/menu">Menu</NavLink></li>
           <li><NavLink to="/about">About</NavLink></li>
           <li><NavLink to="/contact">Contact</NavLink></li>
-          <li><NavLink to="/contact" className="nav-reserve">Reserve a Table</NavLink></li>
+          <li><NavLink to="/contact#reservation" className="nav-reserve">Reserve a Table</NavLink></li>
         </ul>
 
         <button
@@ -46,7 +49,7 @@ export default function Navbar() {
         {[['/', 'Home'], ['/menu', 'Menu'], ['/about', 'About'], ['/contact', 'Contact']].map(([path, label]) => (
           <NavLink key={path} to={path} end={path === '/'} onClick={() => setMobileOpen(false)}>{label}</NavLink>
         ))}
-        <Link to="/contact" className="btn btn-primary" onClick={() => setMobileOpen(false)}>Reserve a Table</Link>
+        <Link to="/contact#reservation" className="btn btn-primary" onClick={() => setMobileOpen(false)}>Reserve a Table</Link>
       </div>
     </>
   )

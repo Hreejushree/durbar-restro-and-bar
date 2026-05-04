@@ -8,13 +8,13 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-logo-col">
             <div className="footer-brand">Durbar Restro</div>
-            <span className="footer-tagline">Restaurant &amp; Bar</span>
+            <span className="footer-tagline">Serving Taste with Tradition.</span>
             <p>Where great food, warm hospitality, and unforgettable experiences come together. Join us and feel the Durbar difference.</p>
             <div className="social-links">
-              <a href="#" className="social-link" aria-label="Facebook">f</a>
-              <a href="#" className="social-link" aria-label="Instagram">📷</a>
-              <a href="#" className="social-link" aria-label="WhatsApp">💬</a>
-              <a href="#" className="social-link" aria-label="YouTube">▶</a>
+              <a href="https://www.facebook.com/p/Durbar-Restro-Birtamode-61568338723204/" className="social-link" aria-label="Facebook">F</a>
+              <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=DmwnWsLNrLvxMxnLdDVllGMrCRRhfsSbRjjfMDJgmjlxZBPmxkdDFJjlVNfdcVNFGWMVjGWSvQwG" className="social-link" aria-label="Email">M</a>
+              <a href="https://www.instagram.com/restrodurbar/?hl=en" className="social-link" aria-label="Instagram">I</a>
+
             </div>
           </div>
           <div className="footer-col">
@@ -24,15 +24,13 @@ export default function Footer() {
               <li><Link to="/menu">Our Menu</Link></li>
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/contact">Contact</Link></li>
-              <li><Link to="/contact">Reservation</Link></li>
+              <li><Link to="/contact#reservation">Reservation</Link></li>
             </ul>
           </div>
           <div className="footer-col">
             <h4>Opening Hours</h4>
             <ul>
-              <li><span className="day">Sun – Thu</span><br /><span className="hours-time">10:00 AM – 10:00 PM</span></li>
-              <li><span className="day">Fri – Sat</span><br /><span className="hours-time">10:00 AM – 12:00 AM</span></li>
-              <li><span className="day">Public Holidays</span><br /><span className="hours-time">11:00 AM – 11:00 PM</span></li>
+              <li><span className="day">Everyday</span><br /><span className="hours-time">10:00 AM – 12:00 AM</span></li>
             </ul>
           </div>
           <div className="footer-col">

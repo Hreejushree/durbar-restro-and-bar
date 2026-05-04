@@ -1,4 +1,4 @@
-/* Page hero is shared, imported via Menu.css pattern - redeclare here */
+
 .page-hero {
   height: 50vh; min-height: 360px; position: relative;
   display: flex; align-items: center; justify-content: center;
@@ -9,14 +9,12 @@
 .breadcrumb { font-size: 0.82rem; color: var(--light-muted); margin-top: 10px; }
 .breadcrumb a { color: var(--gold); text-decoration: none; }
 
-/* STORY */
 .about-story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: start; }
 .about-story-grid p { color: var(--light-muted); line-height: 1.9; margin-bottom: 14px; font-size: 0.95rem; }
 .about-story-imgs { position: relative; display: grid; gap: 14px; }
 .story-img-main { border-radius: 20px; height: 340px; }
 .story-img-secondary { border-radius: 20px; height: 200px; }
 
-/* VALUES */
 .values-section { background: var(--dark-2); border-top: 1px solid rgba(201,168,76,0.08); }
 .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
 .value-card {
@@ -28,7 +26,6 @@
 .value-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; margin-bottom: 12px; color: var(--gold); }
 .value-card p { font-size: 0.86rem; color: var(--light-muted); line-height: 1.8; }
 
-/* TIMELINE */
 .timeline-section { border-top: 1px solid rgba(201,168,76,0.08); }
 .timeline-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: start; }
 .timeline { position: relative; padding-left: 44px; }
@@ -55,7 +52,6 @@
 .tsb-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 800; }
 .tsb-lbl { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
 
-/* TEAM */
 .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .team-card {
   background: var(--dark-2); border: 1px solid rgba(201,168,76,0.1);
@@ -71,7 +67,6 @@
 .team-card h4 { font-family: 'Playfair Display', serif; margin-bottom: 6px; font-size: 1rem; }
 .team-card span { font-size: 0.78rem; color: var(--gold); letter-spacing: 1px; }
 
-/* CTA */
 .cta-strip-about {
   background: linear-gradient(135deg, var(--dark-3), var(--dark-2));
   border-top: 1px solid rgba(201,168,76,0.15); padding: 80px 5%;
@@ -83,7 +78,6 @@
   background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%); pointer-events: none;
 }
 
-/* FADE-IN */
 .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 

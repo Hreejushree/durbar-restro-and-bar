@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@600;700&display=swap');
 
-/* ---------- CSS Variables ---------- */
 :root {
   --gold: #c9a84c;
   --gold-light: #e8c97a;
@@ -22,8 +21,18 @@
   --radius-lg: 20px;
 }
 
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-body);
   background: var(--dark);
@@ -31,18 +40,47 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
-a { text-decoration: none; color: inherit; }
-img { display: block; width: 100%; object-fit: cover; }
-ul { list-style: none; }
 
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--dark-2); }
-::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-/* Utilities */
-.section { padding: 100px 5%; }
-.container { max-width: 1200px; margin: 0 auto; }
-.text-center { text-align: center; }
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+ul {
+  list-style: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 3px;
+}
+
+.section {
+  padding: 15px 20%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
 
 .section-tag {
   display: inline-block;
@@ -51,6 +89,7 @@ ul { list-style: none; }
   color: var(--gold);
   margin-bottom: 12px;
 }
+
 .section-title {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 4vw, 3.2rem);
@@ -59,6 +98,7 @@ ul { list-style: none; }
   margin-bottom: 20px;
   color: var(--light);
 }
+
 .section-subtitle {
   font-size: 1rem;
   color: var(--light-muted);
@@ -66,6 +106,7 @@ ul { list-style: none; }
   margin: 0 auto 60px;
   line-height: 1.8;
 }
+
 .divider {
   display: flex;
   align-items: center;
@@ -73,15 +114,24 @@ ul { list-style: none; }
   justify-content: center;
   margin: 16px auto 44px;
 }
-.divider::before, .divider::after {
+
+.divider::before,
+.divider::after {
   content: '';
   flex: 1;
   max-width: 80px;
   height: 1px;
   background: linear-gradient(to right, transparent, var(--gold));
 }
-.divider::after { background: linear-gradient(to left, transparent, var(--gold)); }
-.divider span { color: var(--gold); font-size: 1.1rem; }
+
+.divider::after {
+  background: linear-gradient(to left, transparent, var(--gold));
+}
+
+.divider span {
+  color: var(--gold);
+  font-size: 1.1rem;
+}
 
 .btn {
   display: inline-flex;
@@ -99,28 +149,64 @@ ul { list-style: none; }
   border: none;
   outline: none;
 }
+
 .btn-primary {
   background: linear-gradient(135deg, var(--gold), var(--gold-dark));
   color: var(--dark);
   box-shadow: var(--shadow-gold);
 }
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 40px rgba(201,168,76,0.5); }
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px rgba(201, 168, 76, 0.5);
+}
+
 .btn-outline {
   background: transparent;
   border: 1.5px solid var(--gold);
   color: var(--gold);
 }
-.btn-outline:hover { background: var(--gold); color: var(--dark); transform: translateY(-3px); }
+
+.btn-outline:hover {
+  background: var(--gold);
+  color: var(--dark);
+  transform: translateY(-3px);
+}
 
 @keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 @keyframes scrollBounce {
-  0%, 100% { transform: translateY(0); opacity: 1; }
-  50% { transform: translateY(6px); opacity: 0.4; }
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(6px);
+    opacity: 0.4;
+  }
 }

@@ -1,12 +1,25 @@
 import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import './Contact.css'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', date: '', guests: '2', message: '' })
   const [submitted, setSubmitted] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    if (location.hash === '#reservation') {
+      setTimeout(() => {
+        const el = document.getElementById('reservation')
+        if (el) {
+          const yOffset = -80
+          const y = el.getBoundingClientRect().top + window.scrollY + yOffset
+          window.scrollTo({ top: y, behavior: 'smooth' })
+        }
+      }, 50)
+    } else {
+      window.scrollTo(0, 0)
+    }
     const els = document.querySelectorAll('.fade-in')
     const observer = new IntersectionObserver(
       entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }),
@@ -14,7 +27,7 @@ export default function Contact() {
     )
     els.forEach(el => observer.observe(el))
     return () => observer.disconnect()
-  }, [])
+  }, [location])
 
   const handle = e => setForm(p => ({ ...p, [e.target.name]: e.target.value }))
 
@@ -23,21 +36,11 @@ export default function Contact() {
     setSubmitted(true)
   }
 
-  const hours = [
-    { day: 'Sunday', time: '10:00 AM – 10:00 PM' },
-    { day: 'Monday', time: '10:00 AM – 10:00 PM' },
-    { day: 'Tuesday', time: '10:00 AM – 10:00 PM' },
-    { day: 'Wednesday', time: '10:00 AM – 10:00 PM' },
-    { day: 'Thursday', time: '10:00 AM – 10:00 PM' },
-    { day: 'Friday', time: '10:00 AM – 12:00 AM' },
-    { day: 'Saturday', time: '10:00 AM – 12:00 AM' },
-  ]
-  const today = new Date().toLocaleString('en-US', { weekday: 'long' })
 
   return (
     <main>
-      {/* PAGE HERO */}
-      <section className="page-hero" style={{ backgroundImage: "url('/images/hero_interior.png')" }}>
+
+      <section className="page-hero" style={{ backgroundImage: "url('/src/assets/home page main.jpg')" }}>
         <div className="page-hero-overlay" />
         <div className="page-hero-content">
           <span className="section-tag">Get In Touch</span>
@@ -46,56 +49,10 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* CONTACT GRID */}
       <section className="section">
         <div className="container">
           <div className="contact-grid">
-            {/* INFO */}
-            <div className="contact-info-block fade-in">
-              <h2>Visit Durbar Restro</h2>
-              <p>We'd love to have you. Reach out by phone, email, or simply walk in — our doors are always open for you.</p>
 
-              <div className="contact-item">
-                <div className="contact-icon">📍</div>
-                <div>
-                  <label>Our Location</label>
-                  <span>Birtamode-4, Laxman Market, Jhapa, Nepal</span>
-                </div>
-              </div>
-              <div className="contact-item">
-                <div className="contact-icon">📞</div>
-                <div>
-                  <label>Phone Number</label>
-                  <a href="tel:+9779709051665">+977-9709051665</a>
-                </div>
-              </div>
-              <div className="contact-item">
-                <div className="contact-icon">✉️</div>
-                <div>
-                  <label>Email Address</label>
-                  <a href="mailto:durbarrestro17@gmail.com">durbarrestro17@gmail.com</a>
-                </div>
-              </div>
-
-              <h3 style={{ fontFamily: 'var(--font-heading)', marginTop: '36px', marginBottom: '18px', fontSize: '1.1rem' }}>Opening Hours</h3>
-              <div className="hours-list">
-                {hours.map(h => (
-                  <div className={`hours-row${h.day === today ? ' today' : ''}`} key={h.day}>
-                    <span className="h-day">{h.day}{h.day === today ? ' (Today)' : ''}</span>
-                    <span className="h-time">{h.time}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="social-links" style={{ marginTop: '28px' }}>
-                <a href="#" className="social-link" aria-label="Facebook">f</a>
-                <a href="#" className="social-link" aria-label="Instagram">📷</a>
-                <a href="#" className="social-link" aria-label="WhatsApp">💬</a>
-                <a href="#" className="social-link" aria-label="YouTube">▶</a>
-              </div>
-            </div>
-
-            {/* RESERVATION FORM */}
             <div className="contact-form-wrap fade-in" id="reservation">
               {submitted ? (
                 <div className="success-msg">
@@ -131,7 +88,7 @@ export default function Contact() {
                       <div className="form-group">
                         <label htmlFor="guests">Number of Guests</label>
                         <select id="guests" name="guests" value={form.guests} onChange={handle}>
-                          {[1,2,3,4,5,6,7,8,9,10].map(n => <option key={n} value={n}>{n} Guest{n > 1 ? 's' : ''}</option>)}
+                          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => <option key={n} value={n}>{n} Guest{n > 1 ? 's' : ''}</option>)}
                           <option value="10+">10+ Guests</option>
                         </select>
                       </div>
@@ -147,11 +104,41 @@ export default function Contact() {
                 </>
               )}
             </div>
+
+            <div className="contact-info-block fade-in">
+              <h2>Visit Durbar Restro</h2>
+              <p>We'd love to have you. Reach out by phone, email, or simply walk in — our doors are always open for you.</p>
+
+              <div className="contact-item">
+                <div className="contact-icon">📍</div>
+                <div>
+                  <label>Our Location</label>
+                  <span>Birtamode-4, Laxman Market, Jhapa, Nepal</span>
+                </div>
+              </div>
+              <div className="contact-item">
+                <div className="contact-icon">📞</div>
+                <div>
+                  <label>Phone Number</label>
+                  <a href="tel:+9779709051665">+977-9709051665</a>
+                </div>
+              </div>
+              <div className="contact-item">
+                <div className="contact-icon">✉️</div>
+                <div>
+                  <label>Email Address</label>
+                  <a href="mailto:durbarrestro17@gmail.com">durbarrestro17@gmail.com</a>
+                </div>
+              </div>
+
+
+
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* MAP */}
       <section className="map-section">
         <div className="map-header">
           <div className="container">
