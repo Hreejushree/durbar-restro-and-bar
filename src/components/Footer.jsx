@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom'
 import './Footer.css'
+import { FaInstagram, FaFacebook } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+
+
 
 export default function Footer() {
   return (
@@ -11,9 +15,11 @@ export default function Footer() {
             <span className="footer-tagline">Serving Taste with Tradition.</span>
             <p>Where great food, warm hospitality, and unforgettable experiences come together. Join us and feel the Durbar difference.</p>
             <div className="social-links">
-              <a href="https://www.facebook.com/p/Durbar-Restro-Birtamode-61568338723204/" className="social-link" aria-label="Facebook">F</a>
-              <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=DmwnWsLNrLvxMxnLdDVllGMrCRRhfsSbRjjfMDJgmjlxZBPmxkdDFJjlVNfdcVNFGWMVjGWSvQwG" className="social-link" aria-label="Email">M</a>
-              <a href="https://www.instagram.com/restrodurbar/?hl=en" className="social-link" aria-label="Instagram">I</a>
+              <a href="https://www.facebook.com/p/Durbar-Restro-Birtamode-61568338723204/" className="social-link" aria-label="Facebook"><FaFacebook /></a>
+              <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=DmwnWsLNrLvxMxnLdDVllGMrCRRhfsSbRjjfMDJgmjlxZBPmxkdDFJjlVNfdcVNFGWMVjGWSvQwG" className="social-link" aria-label="Email"><MdEmail /></a>
+
+              <a href="https://www.instagram.com/restrodurbar/?hl=en" className="social-link" aria-label="Instagram"><FaInstagram /></a>
+
 
             </div>
           </div>
