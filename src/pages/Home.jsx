@@ -1,6 +1,15 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useRef } from 'react'
 import './Home.css'
+import heroBg from '../assets/home page main.jpg'
+import momoImg from '../assets/momo.jpeg'
+import bartenderImg from '../assets/bartender.jpeg'
+import musicianImg from '../assets/musician.jpg'
+import cakeImg from '../assets/cake.jpg'
+import biryaniImg from '../assets/biryani.jpg'
+import keemaImg from '../assets/keema.webp'
+import platterImg from '../assets/platter.jpg'
+import bar1Img from '../assets/bar1.jpeg'
 
 function useFadeIn() {
   useEffect(() => {
@@ -26,7 +35,7 @@ export default function Home() {
     <main>
 
       <section className="hero" ref={heroRef}>
-        <div className="hero-bg" />
+        <div className="hero-bg" style={{ backgroundImage: `url(${heroBg})` }} />
         <div className="hero-overlay" />
         <div className="hero-content">
           <span className="hero-eyebrow">Welcome to</span>
@@ -81,9 +90,9 @@ export default function Home() {
           </div>
           <div className="specialties-grid">
             {[
-              { img: '/src/assets/momo.jpeg', tag: 'Signature', title: 'Authentic Cuisines', desc: 'Explore a rich variety of traditional Nepali dishes and modern favorites crafted with love.' },
-              { img: '/src/assets/bartender.jpeg', tag: 'Bar', title: 'Premium Drinks', desc: 'From craft cocktails to refreshing mocktails, our bar offers the perfect companion.' },
-              { img: '/src/assets/musician.jpg', tag: 'Entertainment', title: 'Live Music & Events', desc: 'Immerse yourself in electrifying live performances that make every evening special.' },
+              { img: momoImg, tag: 'Signature', title: 'Authentic Cuisines', desc: 'Explore a rich variety of traditional Nepali dishes and modern favorites crafted with love.' },
+              { img: bartenderImg, tag: 'Bar', title: 'Premium Drinks', desc: 'From craft cocktails to refreshing mocktails, our bar offers the perfect companion.' },
+              { img: musicianImg, tag: 'Entertainment', title: 'Live Music & Events', desc: 'Immerse yourself in electrifying live performances that make every evening special.' },
             ].map(s => (
               <div className="specialty-card fade-in" key={s.title}>
                 <img src={s.img} alt={s.title} />
@@ -102,7 +111,7 @@ export default function Home() {
         <div className="container">
           <div className="about-grid">
             <div className="about-img-wrap fade-in">
-              <img src="/src/assets/home page main.jpg" alt="Durbar Restro Exterior" />
+              <img src={heroBg} alt="Durbar Restro Exterior" />
               <div className="about-img-badge">
                 <span className="big-num">2024</span>
                 <span className="sm-txt">Est. Year</span>
@@ -134,7 +143,7 @@ export default function Home() {
             <p className="section-subtitle">Every corner of Durbar Restro tells a story. Come experience the warmth, the energy, and the magic.</p>
           </div>
           <div className="gallery-grid">
-            {['/src/assets/cake.jpg', '/src/assets/biryani.jpg', '/src/assets/keema.webp', '/src/assets/platter.jpg', '/src/assets/bar1.jpeg'].map((src, i) => (
+            {[cakeImg, biryaniImg, keemaImg, platterImg, bar1Img].map((src, i) => (
               <div className="gallery-item fade-in" key={i}>
                 <img src={src} alt={`Gallery ${i + 1}`} />
                 <div className="gallery-overlay">🔍</div>

@@ -1,6 +1,7 @@
 import { NavLink, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import './Navbar.css'
+import logoImg from '../assets/logo.jpg'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -21,7 +22,7 @@ export default function Navbar() {
     <>
       <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
         <Link to="/" className="nav-logo" onClick={() => setMobileOpen(false)}>
-          <img src="/src/assets/logo.jpg" alt="Durbar Restro Logo" className="nav-logo-img" />
+          <img src={logoImg} className="nav-logo-img" alt="Durbar Restro Logo" />
           <div className="nav-logo-text">
             <span className="brand">Durbar Restro</span>
             <span className="tagline">Restaurant &amp; Bar</span>
