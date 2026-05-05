@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import './Contact.css'
+import heroImg from '../assets/home page main.jpg'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', date: '', guests: '2', message: '' })
@@ -40,7 +41,7 @@ export default function Contact() {
   return (
     <main>
 
-      <section className="page-hero" style={{ backgroundImage: "url('/src/assets/home page main.jpg')" }}>
+      <section className="page-hero" style={{ backgroundImage: `url(${heroImg})` }}>
         <div className="page-hero-overlay" />
         <div className="page-hero-content">
           <span className="section-tag">Get In Touch</span>

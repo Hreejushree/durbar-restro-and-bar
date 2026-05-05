@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './About.css'
+import barImg from '../assets/bar.webp'
+import bandImg from '../assets/band.jpg'
 
 export default function About() {
   useEffect(() => {
@@ -17,7 +19,7 @@ export default function About() {
   return (
     <main>
 
-      <section className="page-hero" style={{ backgroundImage: "url('/src/assets/bar.webp')" }}>
+      <section className="page-hero" style={{ backgroundImage: `url(${barImg})` }}>
         <div className="page-hero-overlay" />
         <div className="page-hero-content">
           <span className="section-tag">Who We Are</span>
@@ -39,8 +41,8 @@ export default function About() {
               <Link to="/contact" className="btn btn-primary" style={{ marginTop: '28px' }}>Visit Us Today</Link>
             </div>
             <div className="about-story-imgs fade-in">
-              <img src="/src/assets/bar.webp" alt="Inside Durbar Restro" className="story-img-main" />
-              <img src="/src/assets/band.jpg" alt="Durbar Restro Exterior" className="story-img-secondary" />
+              <img src={barImg} alt="Inside Durbar Restro" className="story-img-main" />
+              <img src={bandImg} alt="Durbar Restro Exterior" className="story-img-secondary" />
             </div>
           </div>
         </div>

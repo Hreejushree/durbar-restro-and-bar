@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import './Menu.css'
+import groupImg from '../assets/group.jpg'
+import bartenderImg from '../assets/bartender.jpeg'
 
 import { menuData } from '../data/menuItems'
 
@@ -20,7 +22,7 @@ export default function Menu() {
   return (
     <main>
 
-      <section className="page-hero" style={{ backgroundImage: "url('/src/assets/group.jpg')" }}>
+      <section className="page-hero" style={{ backgroundImage: `url(${groupImg})` }}>
         <div className="page-hero-overlay" />
         <div className="page-hero-content">
           <span className="section-tag">Culinary Delights</span>
@@ -80,7 +82,7 @@ export default function Menu() {
               </div>
             </div>
             <div className="drinks-img-wrap">
-              <img src="/src/assets/bartender.jpeg" alt="Drinks & Bar" />
+              <img src={bartenderImg} alt="Drinks & Bar" />
             </div>
           </div>
         </div>
